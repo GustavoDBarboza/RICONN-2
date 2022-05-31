@@ -347,11 +347,6 @@ footer{
         transition: transform 1s;
     }
 
-    .index--linkLocales-img:hover{
-        width: 130px;
-        transform:scale(1.2)
-    }
-
     .index--cita{
         align-items: flex-start;
         width:50%;

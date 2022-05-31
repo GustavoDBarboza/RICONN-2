@@ -236,6 +236,7 @@ nav{
     margin-top: 4rem;
     padding-right: 0.5rem;
     align-self: flex-end;
+    transition: 1s;
 }
 
 .index--cita-p2{
@@ -347,14 +348,11 @@ footer{
         transition: transform 1s;
     }
 
-    .index--linkLocales-img:hover{
-        width: 130px;
-        transform:scale(1.2)
-    }
 
     .index--cita{
         align-items: flex-start;
         width:50%;
+
     }
 
     .index--cita-p{
@@ -362,6 +360,7 @@ footer{
         font-style: italic;
         margin: 0;
         padding: 0;
+        transition: 2s;
     }
 
     /* hhhhhhhhhhh NOSOTROS HHHHHHHHHHH */
@@ -458,4 +457,21 @@ footer{
         display: inline-block;
         width: 20rem;
     }
+
+    /* hhhhhhhhhhhhhhhhhhhhhhhhhhhhh HOVER'S HHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+
+    .index--cita-p:hover{
+        color: red;
+        font-size: 2rem ;
+    }
+
+    .index--linkLocales-img:hover{
+        width: 130px;
+        transform:scale(1.2)
+    }
+
+    .index--cita-img:hover{
+        width: 100px;
+    }
+
 }

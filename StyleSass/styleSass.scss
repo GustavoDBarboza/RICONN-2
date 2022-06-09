@@ -1,0 +1,28 @@
+@import "tamaño";
+@import "color";
+main{
+    section{
+        div{
+            div{
+                h2{
+                    font-size: $tamanoh2;
+                    color: $colorh2;
+                }
+                p{
+                    font-size: $tamanoPG;
+                    color: $colorp;
+                }
+            }
+        }
+        div{
+            h2{
+                font-size: $tamanoh2;
+                color: $colorh2;
+            }
+            p{
+                font-size: $tamanoPG;
+                color: $colorp;
+            }
+        }
+    }
+}

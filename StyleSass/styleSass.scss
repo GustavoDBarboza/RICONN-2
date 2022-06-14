@@ -1,8 +1,378 @@
-@import "tamaño";
-@import "color";
+@import "variables";
+*{
+    margin: 0%;
+    padding: 0;
+}
+@mixin columnas {
+    display: flex;
+    flex-direction: column;
+}
+:root{
+    --clr-bkg-orange: #F36641;
+    --clr-bkg-ligth: white;
+    --clr-bkg-orangeLigth: #FFA891;
+    --clr-title: #E14015;
+}
+
+.colorPrincipal{
+    background-color: var(--clr-bkg-orange);
+}
+.colorPrincipal-ligth{
+    background-color: var(--clr-bkg-orangeLigth);
+}
+
+.colorBlanco{
+    color: white !important;   
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, fr);
+    grid-template-rows: 90px auto 90px;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+.logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: 2.5rem;
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+h2,
+h3,
+h4{
+    color: #E14015;
+}
+
+header{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-color: var(--clr-bkg-orange);
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
 main{
-    section{
-        div{
+    grid-column: 1 / span 3;
+    grid-row: 2 / 3;
+}
+nav{
+    height: auto;
+    width: 100%;
+}
+
+.nav--element{
+    font-size: 1.5rem !important;
+}
+
+.seccionPrincipal{
+    @include columnas;
+    align-content: center;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    /* height: auto; */
+}
+$secciones: (
+    nosotros: 2rem,
+    productos: 0,
+    locales: 0,
+    contacto: 0,
+);
+
+@each $nombre, $valor1  in $secciones {
+    .seccionPrincipal-#{$nombre} {
+        padding-top: $valor1;
+        height: auto;
+        @extend .seccionPrincipal
+    }
+}
+
+/* hhhhhhhhhh NOSOTROS HHHHHHHHHHHH */
+
+
+.nuestraHistoria{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nuestraHistoria-texto{
+    width: 100%;
+    margin-top: 2rem;
+
+}
+
+.nuestraHistoria--sec-img{
+    display: none;
+}
+
+.nuestraHistoria-img{
+    display: none;
+}
+
+.nosotros--vision{
+    padding-top: 25px;
+}
+
+.nosotros--mision{
+    padding-top: 25px;
+}
+
+/* hhhhhhhhhh PRODUCTOS HHHHHHHHHHHH */
+
+
+.productos--sec2-title{
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.productos--sec2-a{
+    text-align: center;
+}
+
+.productos--sec2-fruta{
+    margin-top: 0.8rem;
+}
+
+.productos--sec2-b{
+    margin-top: 2rem;
+    background-color: var(--clr-bkg-orangeLigth);
+}
+
+/* hhhhhhhhhh LOCALES HHHHHHHHHHHH */
+.local--title{
+    margin-top: 2rem;
+}
+
+.local--items{
+    margin-top: 1.5rem;
+}
+
+.local--buscador{
+    margin-top: 1.8rem;
+}
+
+.local--buscador-img{
+    margin-top: 0.8rem;
+}
+
+/* hhhhhhhhhh CONTACTO HHHHHHHHHHHH */
+.contactanos{
+    @include columnas;
+    align-items: center;
+    width: 85%;
+    margin-top: 2.5rem;
+}
+
+.contactanos--items{
+    margin-top: 1.5rem;
+    
+}
+
+.item-label{
+    display: block;
+    text-align: left;
+    height: 1.5rem;
+    width: 8rem;
+    color: var(--clr-title);
+}
+
+.item-input{
+    background-color: var(--clr-bkg-orangeLigth);
+}
+
+.item-input-big{
+   height: 6rem;
+    
+}
+
+/* -----HHHHHHHHHHHHHHHHHHHHHHH------ */
+
+.seccionPrincipal--img{
+    justify-content: center;
+}
+
+.seccionPrincipal--img-img{
+    width: 100%;
+    height: 7.5rem;
+    
+}
+
+.index--title{
+    color: var(--clr-title);
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.index--linkLocales{
+    display: none;
+}
+
+.index--cita{
+        @include columnas;
+        align-items: center;
+}
+
+.index--cita-p{
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.index--cita-img{
+    width: 80px;
+    margin-top: 4rem;
+    padding-right: 0.5rem;
+    align-self: flex-end;
+    transition: 1s;
+}
+
+.index--cita-p2{
+    align-self: flex-end;
+}
+
+footer{
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    display: flex;
+    width: 100%;
+    background-color: var(--clr-bkg-orange);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.footer--contact{
+    @include columnas;
+    align-items: start;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.footer--contact-items{
+    @include columnas;
+}
+
+.credits{
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.footer--icons-sp{
+    border-bottom: 1px solid white;
+}
+
+.footer--icons{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.2rem;
+}
+
+/* hhhhhhhhhhhhhhhhhhhhhhhh MEDIA QUERIES HHHHHHHHHHHHHHHHHHHHH
+ */
+@media screen and (min-width: 700px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 2rem;
+    }
+
+    nav{
+        align-self: flex-end;
+        margin-right: 5rem;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThxkeDmxCyXJLZGY5tw1AIwA_QZoj-BIbWOQ&usqp=CAU); 
+    }
+
+    .footer--contact-b{
+        margin-right: 3rem;
+    }
+
+    .seccionPrincipal{
+        width: 700px;
+        background-color: white;
+    }
+
+    /* hhhhhhhhhhhhhh INDEX hhhhhhhhhhhhhh */
+
+    .seccionPrincipal-index{
+        height: 40rem;
+    }
+
+    .index--bass{
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-around;
+        /* height: 200px; */
+    }
+
+    .index--title{
+        margin-left: 0px;
+        margin-top: 40px;
+        color: rgba(230, 120, 57, 0.76);
+        justify-content: flex-start;
+    }
+
+    .index--linkLocales{
+        @include columnas;
+        align-items:center;
+        margin-top: 22px;
+    }
+
+    .index--linkLocales-img{
+        width: 130px;
+        transition: transform 1s;
+    }
+
+
+    .index--cita{
+        align-items: flex-start;
+        width:50%;
+
+    }
+
+    .index--cita-p{
+        color: rgb(75, 73, 73);
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        transition: 2s;
+    }
+
+    /* hhhhhhhhhhh NOSOTROS HHHHHHHHHHH */
+
+    main{
+        section{
+            div{
+                div{
+                    h2{
+                        font-size: $tamanoh2;
+                        color: $colorh2;
+                    }
+                    p{
+                        font-size: $tamanoPG;
+                        color: $colorp;
+                    }
+                }
+            }
             div{
                 h2{
                     font-size: $tamanoh2;
@@ -14,15 +384,113 @@ main{
                 }
             }
         }
-        div{
-            h2{
-                font-size: $tamanoh2;
-                color: $colorh2;
-            }
-            p{
-                font-size: $tamanoPG;
-                color: $colorp;
-            }
-        }
     }
+
+    .nuestraHistoria{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    
+    .nuestraHistoria-texto{
+        width: 50%;  
+        text-align:left;
+    }
+    
+    .nuestraHistoria--sec-img{
+        margin-left: 30px;
+        @include columnas;
+        align-items: center;
+    }
+    
+    .nuestraHistoria-img{
+        display: inline;
+    }
+
+    /* hhhhhhhhhhh PRODUCTOS HHHHHHHHHHH */
+
+    .seccionPrincipal-productos{
+        padding-top: 0;
+        height: auto;
+    }
+
+    .productos--sec2{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .productos--sec2-title{
+        margin-top: 3REM;
+        margin-bottom: 1.5rem;
+    }
+    
+    .productos--sec2-a{
+        text-align: center;
+        width: 50%;
+    }
+    
+    .productos--sec2-fruta{
+        margin-top: 1.2rem;
+    }
+    
+    .productos--sec2-b{
+        width: 30%;
+        margin-top: 90px;
+        margin-right: 40px;
+        background-color:rgba(230, 120, 57, 0.473) ;
+        border: 1px solid rgba(230, 120, 57, 0.76);
+        padding: 10px;
+        height: 350px;
+        overflow:scroll;
+    }
+
+    /* hhhhhhhhhhhhhh LOCALES hhhhhhhhhhhhhh */
+
+    .seccionPrincipal-locales{
+        height: auto;
+    }
+
+    .local--items{
+        margin-top: 30px;
+        display: flex;
+        height: 160px;
+        justify-content: space-around;
+    }
+
+    .local--items2{
+        display: flex;
+        justify-content: space-around;
+        height: 160px;
+    }
+    .local--item{
+        @include columnas;
+       text-align: center;
+       
+       width: 33%;
+    }
+    .local-img{
+        margin-left: 50px;
+    }
+
+    .item-label{
+        display: inline-block;
+        width: 20rem;
+    }
+
+    /* hhhhhhhhhhhhhhhhhhhhhhhhhhhhh HOVER'S HHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+
+    .index--cita-p:hover{
+        color: red;
+        font-size: 2rem ;
+    }
+
+    .index--linkLocales-img:hover{
+        width: 130px;
+        transform:scale(1.2)
+    }
+
+    .index--cita-img:hover{
+        width: 100px;
+    }
+
 }

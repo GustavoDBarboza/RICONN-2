@@ -1,20 +1,585 @@
-main section div div h2 {
-  font-size: 2rem;
+@charset "UTF-8";
+/* TAMAÑOS */
+* {
+  margin: 0%;
+  padding: 0;
+}
+
+:root {
+  --clr-bkg-orange: #F36641;
+  --clr-bkg-ligth: white;
+  --clr-bkg-orangeLigth: #FFA891;
+  --clr-title: #E14015;
+}
+
+.colorPrincipal {
+  background-color: var(--clr-bkg-orange);
+}
+
+.colorPrincipal-ligth {
+  background-color: var(--clr-bkg-orangeLigth);
+}
+
+.colorBlanco {
+  color: white !important;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (fr)[3];
+      grid-template-columns: repeat(3, fr);
+  -ms-grid-rows: 90px auto 90px;
+      grid-template-rows: 90px auto 90px;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 2.5rem;
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+h2,
+h3,
+h4 {
   color: #E14015;
 }
 
-main section div div p {
-  font-size: 1rem;
-  color: #1f1817;
+header {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  background-color: var(--clr-bkg-orange);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  z-index: 10;
 }
 
-main section div h2 {
-  font-size: 2rem;
-  color: #E14015;
+main {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
 }
 
-main section div p {
-  font-size: 1rem;
-  color: #1f1817;
+nav {
+  height: auto;
+  width: 100%;
+}
+
+.nav--element {
+  font-size: 1.5rem !important;
+}
+
+.seccionPrincipal, .seccionPrincipal-nosotros, .seccionPrincipal-productos, .seccionPrincipal-locales, .seccionPrincipal-contacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  /* height: auto; */
+}
+
+.seccionPrincipal-nosotros {
+  padding-top: 2rem;
+  height: auto;
+}
+
+.seccionPrincipal-productos {
+  padding-top: 0;
+  height: auto;
+}
+
+.seccionPrincipal-locales {
+  padding-top: 0;
+  height: auto;
+}
+
+.seccionPrincipal-contacto {
+  padding-top: 0;
+  height: auto;
+}
+
+/* hhhhhhhhhh NOSOTROS HHHHHHHHHHHH */
+.nuestraHistoria {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nuestraHistoria-texto {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.nuestraHistoria--sec-img {
+  display: none;
+}
+
+.nuestraHistoria-img {
+  display: none;
+}
+
+.nosotros--vision {
+  padding-top: 25px;
+}
+
+.nosotros--mision {
+  padding-top: 25px;
+}
+
+/* hhhhhhhhhh PRODUCTOS HHHHHHHHHHHH */
+.productos--sec2-title {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.productos--sec2-a {
+  text-align: center;
+}
+
+.productos--sec2-fruta {
+  margin-top: 0.8rem;
+}
+
+.productos--sec2-b {
+  margin-top: 2rem;
+  background-color: var(--clr-bkg-orangeLigth);
+}
+
+/* hhhhhhhhhh LOCALES HHHHHHHHHHHH */
+.local--title {
+  margin-top: 2rem;
+}
+
+.local--items {
+  margin-top: 1.5rem;
+}
+
+.local--buscador {
+  margin-top: 1.8rem;
+}
+
+.local--buscador-img {
+  margin-top: 0.8rem;
+}
+
+/* hhhhhhhhhh CONTACTO HHHHHHHHHHHH */
+.contactanos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  margin-top: 2.5rem;
+}
+
+.contactanos--items {
+  margin-top: 1.5rem;
+}
+
+.item-label {
+  display: block;
+  text-align: left;
+  height: 1.5rem;
+  width: 8rem;
+  color: var(--clr-title);
+}
+
+.item-input {
+  background-color: var(--clr-bkg-orangeLigth);
+}
+
+.item-input-big {
+  height: 6rem;
+}
+
+/* -----HHHHHHHHHHHHHHHHHHHHHHH------ */
+.seccionPrincipal--img {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.seccionPrincipal--img-img {
+  width: 100%;
+  height: 7.5rem;
+}
+
+.index--title {
+  color: var(--clr-title);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+.index--linkLocales {
+  display: none;
+}
+
+.index--cita {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.index--cita-p {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.index--cita-img {
+  width: 80px;
+  margin-top: 4rem;
+  padding-right: 0.5rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.index--cita-p2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: var(--clr-bkg-orange);
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.footer--contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100%;
+}
+
+.footer--contact-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.credits {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.footer--icons-sp {
+  border-bottom: 1px solid white;
+}
+
+.footer--icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 0.2rem;
+}
+
+/* hhhhhhhhhhhhhhhhhhhhhhhh MEDIA QUERIES HHHHHHHHHHHHHHHHHHHHH
+ */
+@media screen and (min-width: 700px) {
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 2rem;
+  }
+  nav {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-right: 5rem;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThxkeDmxCyXJLZGY5tw1AIwA_QZoj-BIbWOQ&usqp=CAU);
+  }
+  .footer--contact-b {
+    margin-right: 3rem;
+  }
+  .seccionPrincipal, .seccionPrincipal-nosotros, .seccionPrincipal-productos, .seccionPrincipal-locales, .seccionPrincipal-contacto {
+    width: 700px;
+    background-color: white;
+  }
+  /* hhhhhhhhhhhhhh INDEX hhhhhhhhhhhhhh */
+  .seccionPrincipal-index {
+    height: 40rem;
+  }
+  .index--bass {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* height: 200px; */
+  }
+  .index--title {
+    margin-left: 0px;
+    margin-top: 40px;
+    color: rgba(230, 120, 57, 0.76);
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .index--linkLocales {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 22px;
+  }
+  .index--linkLocales-img {
+    width: 130px;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+  .index--cita {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 50%;
+  }
+  .index--cita-p {
+    color: #4b4949;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 2s;
+    transition: 2s;
+  }
+  /* hhhhhhhhhhh NOSOTROS HHHHHHHHHHH */
+  main section div div h2 {
+    font-size: 2rem;
+    color: #E14015;
+  }
+  main section div div p {
+    font-size: 1rem;
+    color: #1f1817;
+  }
+  main section div h2 {
+    font-size: 2rem;
+    color: #E14015;
+  }
+  main section div p {
+    font-size: 1rem;
+    color: #1f1817;
+  }
+  .nuestraHistoria {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nuestraHistoria-texto {
+    width: 50%;
+    text-align: left;
+  }
+  .nuestraHistoria--sec-img {
+    margin-left: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nuestraHistoria-img {
+    display: inline;
+  }
+  /* hhhhhhhhhhh PRODUCTOS HHHHHHHHHHH */
+  .seccionPrincipal-productos {
+    padding-top: 0;
+    height: auto;
+  }
+  .productos--sec2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .productos--sec2-title {
+    margin-top: 3REM;
+    margin-bottom: 1.5rem;
+  }
+  .productos--sec2-a {
+    text-align: center;
+    width: 50%;
+  }
+  .productos--sec2-fruta {
+    margin-top: 1.2rem;
+  }
+  .productos--sec2-b {
+    width: 30%;
+    margin-top: 90px;
+    margin-right: 40px;
+    background-color: rgba(230, 120, 57, 0.473);
+    border: 1px solid rgba(230, 120, 57, 0.76);
+    padding: 10px;
+    height: 350px;
+    overflow: scroll;
+  }
+  /* hhhhhhhhhhhhhh LOCALES hhhhhhhhhhhhhh */
+  .seccionPrincipal-locales {
+    height: auto;
+  }
+  .local--items {
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 160px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .local--items2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 160px;
+  }
+  .local--item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    width: 33%;
+  }
+  .local-img {
+    margin-left: 50px;
+  }
+  .item-label {
+    display: inline-block;
+    width: 20rem;
+  }
+  /* hhhhhhhhhhhhhhhhhhhhhhhhhhhhh HOVER'S HHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+  .index--cita-p:hover {
+    color: red;
+    font-size: 2rem;
+  }
+  .index--linkLocales-img:hover {
+    width: 130px;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .index--cita-img:hover {
+    width: 100px;
+  }
 }
 /*# sourceMappingURL=styleSass.css.map */

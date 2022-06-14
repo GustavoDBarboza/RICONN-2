@@ -79,10 +79,6 @@ nav{
 
 /* hhhhhhhhhh NOSOTROS HHHHHHHHHHHH */
 
-.seccionPrincipal-nosotros{
-    padding: 2rem;
-    height: auto;
-}
 
 .nuestraHistoria{
     display: flex;
@@ -113,10 +109,6 @@ nav{
 
 /* hhhhhhhhhh PRODUCTOS HHHHHHHHHHHH */
 
-.seccionPrincipal-productos{
-    padding-top: 0;
-    height: auto;
-}
 
 .productos--sec2-title{
     margin-top: 1rem;
@@ -137,12 +129,6 @@ nav{
 }
 
 /* hhhhhhhhhh LOCALES HHHHHHHHHHHH */
-
-.seccionPrincipal-locales{
-    padding-top: 0;
-    height: auto;
-}
-
 .local--title{
     margin-top: 2rem;
 }
@@ -160,12 +146,6 @@ nav{
 }
 
 /* hhhhhhhhhh CONTACTO HHHHHHHHHHHH */
-
-.seccionPrincipal-contacto{
-    padding-top: 0;
-    height: auto;
-}
-
 .contactanos{
     display: flex;
     flex-direction: column;

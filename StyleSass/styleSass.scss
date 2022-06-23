@@ -22,7 +22,9 @@
 }
 
 .colorBlanco{
-    color: white !important;   
+    color: white !important; 
+    width: 2rem   !important;  
+    font-size: 3rem;
 }
 
 body{
@@ -75,6 +77,10 @@ nav{
 
 .nav--element{
     font-size: 1.5rem !important;
+}
+
+.svgIcon{
+    width: 100% !important;
 }
 
 .seccionPrincipal{
